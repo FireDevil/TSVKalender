@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@xml/selector"
+    android:paddingTop="25dp"
+    android:paddingLeft="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_drawer_footer_image" />
+
+    <TextView
+        android:layout_width="0dip"
+        android:layout_weight="4"
+        android:layout_height="60dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/nav_drawer_footer_text"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:gravity="center_vertical"
+        android:textStyle="italic"
+        android:textSize="20sp" />
+</LinearLayout><!-- From: file:/C:/Users/Antec/SkyDrive/Android/TSVKalender/res/layout/nav_drawer_footer.xml -->

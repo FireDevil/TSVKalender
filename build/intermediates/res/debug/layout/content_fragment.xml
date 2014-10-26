@@ -1,0 +1,176 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/content_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:paddingBottom="12dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="8dp"
+            android:paddingTop="8dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/content_subheading1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingBottom="6dp"
+            android:paddingLeft="48dp"
+            android:paddingTop="6dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TableRow
+            android:id="@+id/content_row_series"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="6dp"
+            android:paddingLeft="48dp"
+            android:paddingTop="6dp" >
+
+            <TextView
+                android:id="@+id/content_subheading2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/contentImage"
+                android:layout_width="0dip"
+                android:layout_height="50dp"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/content_row_series2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/content_hint_series"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/content_hint_series" />
+
+            <TextView
+                android:id="@+id/content_label_series"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1.5"
+                android:gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/content_row_starters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/content_hint_starters"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/content_hint_starters" />
+
+            <TextView
+                android:id="@+id/content_label_starters"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1.5"
+                android:gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/content_row_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/content_hint_form"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/content_hint_form" />
+
+            <TextView
+                android:id="@+id/content_label_form"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1.5"
+                android:gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/content_row_club"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/content_hint_club"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/content_hint_club" />
+
+            <TextView
+                android:id="@+id/content_label_club"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1.5"
+                android:gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/content_row_extra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/content_hint_extra"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/content_hint_extra" />
+
+            <TextView
+                android:id="@+id/content_label_extra"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1.5"
+                android:gravity="left" />
+        </TableRow>
+    </LinearLayout>
+
+</ScrollView><!-- From: file:/C:/Users/Antec/SkyDrive/Android/TSVKalender/res/layout/content_fragment.xml -->

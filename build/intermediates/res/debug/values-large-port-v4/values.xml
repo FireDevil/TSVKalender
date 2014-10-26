@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Antec/SkyDrive/Android/TSVKalender/res/values-large-port/refs.xml -->
+    <eat-comment/>
+    <item name="row_contacts" type="layout">@layout/row_contacts_large_port</item>
+    <item name="row_dates" type="layout">@layout/row_dates_large_port</item>
+</resources>

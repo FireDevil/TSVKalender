@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\debug\classes-f8283d309b810a1717304ce6cac842d48e4bdca4.jar"
+        jar="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+    <item
+        dex="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-273bb21d4efaa5bfb12a46f7b764850c08246449.jar"
+        jar="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-f50c99352114962b3cb1f345ec241288c5f4fbba.jar"
+        jar="C:\Users\Antec\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
+    <item
+        dex="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\debug\classes-fbf2ff75cece154fb479cd4f1bce9c6638877622.jar"
+        jar="C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.11\classes.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="0f700f6802ba1a1f1fa7ac26d5db0666a89d75a6"/>
+
+</pre-dex-items>

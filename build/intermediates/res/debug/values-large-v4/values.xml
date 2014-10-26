@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Antec/SkyDrive/Android/TSVKalender/res/values-large/refs.xml -->
+    <eat-comment/>
+    <item name="activity_calendar_list" type="layout">@layout/activity_calendar_twopane</item>
+    <item name="content_fragment" type="layout">@layout/content_fragment_large</item>
+    <item name="main_fragment" type="layout">@layout/main_fragment_land</item>
+    <item name="row_dates" type="layout">@layout/row_dates_large</item>
+</resources>
