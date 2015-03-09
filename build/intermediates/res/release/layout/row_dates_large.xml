@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    android:padding="4dp"
+    android:background="@xml/selector"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:layout_weight="0.1"
+        android:background="@color/blue"
+        android:minWidth="30dp"
+        android:orientation="vertical" >
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:button="@xml/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="1dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:minWidth="35dp"
+            android:paddingRight="4dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/rowTopText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/black" />
+
+        <TableRow
+            android:id="@+id/rowInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/rowLeft"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/rowMiddle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/rowRight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/black" />
+        </TableRow>
+    </LinearLayout>
+</LinearLayout><!-- From: file:/C:/Users/Antec/SkyDrive/Android/TSVKalender/res/layout/row_dates_large.xml -->

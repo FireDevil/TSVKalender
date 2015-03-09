@@ -3,6 +3,8 @@ package tsv.kalender;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
+import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,7 +104,8 @@ public class MainFragment extends Fragment {
         String d;
 
         ArrayList<Dates> dates = ApplicationContextProvider.getDates();
-
+        Time b = new Time();
+        Time a = new Time();
 
         for (Dates day : dates) {
 
@@ -110,18 +113,31 @@ public class MainFragment extends Fragment {
                 break;
             }
 
-            LinearLayout item = new LinearLayout(getActivity());
-            item = (LinearLayout) inflater.inflate(R.layout.main_card, null);
-
-            String tmp;
             if (day.getStartDate().length() == 0) {
                 continue;
             }
 
+            String tmp;
             d = day.getStartDate().substring(0, day.getStartDate().indexOf("."));
             tmp = day.getStartDate().substring(day.getStartDate().indexOf(".") + 1, day.getStartDate().length());
             m = tmp.substring(0, tmp.indexOf("."));
             y = tmp.substring(tmp.indexOf(".") + 1, tmp.length());
+
+            a.setToNow();
+            b.setToNow();
+            b.year = Integer.parseInt(y);
+            b.month = Integer.parseInt(m)-1;
+            b.monthDay = Integer.parseInt(d);
+            b.hour = 23;
+            b.minute = 59;
+            b.second = 59;
+
+            if(a.after(b)){
+                continue;
+            }
+
+            CardView item = new CardView(getActivity());
+            item = (CardView) inflater.inflate(R.layout.main_card, null);
 
             TextView tv = (TextView) item.findViewById(R.id.mainCardTopText);
             tv.setText(day.getDescription());

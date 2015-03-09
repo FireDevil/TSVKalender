@@ -41,18 +41,21 @@
     <string name="calendar">Kalender</string>
     <string name="selected">einfügen</string>
     <string name="no_entries">Für die gewählte Sportart gibt es leider keine Einträge.</string>
-    <string name="insert">In Kalender einfügen</string> 
+    <string name="insert">In Kalender einfügen</string>
     <string name="no_calendar">Es konnte kein Kalender gewählt werden.</string>
     <string name="cal_of">Terminkalender\nThüringer Skiverband</string>
     <string name="calendar_dates">Kalender</string>
     <string name="navigation_drawer_open">Schließen</string>
     <string name="navigation_drawer_close">Öffnen</string>
-
     <string name="ad_unit_id">ca-app-pub-3339452278602876/9221106346</string>
     <string name="ad_interstitial_id">ca-app-pub-3339452278602876/8728251949</string>
     <string name="thank_you_for_billing">Danke!\nBitte beachten Sie, dass es einige Minuten dauern kann bis die Änderung wirksam wird.</string>
     <string name="play_store_billing_needed">Dieser Kauf benötigt den `Google Play Store` auf deinem Smartphone</string>
     <string name="overview">Übersicht</string>
     <string name="remove_ads">Werbung entfernen</string>
+    <string name="search_hint">Suche</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,8 +1,11 @@
 package tsv.kalender;
 
+import android.app.SearchManager;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.MergeCursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -14,7 +17,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -22,8 +24,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -33,6 +35,8 @@ import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.TimeZone;
 import java.util.Vector;
 
@@ -128,8 +132,9 @@ public class ListingActivity extends FragmentActivity implements
             content = Integer.parseInt(getIntent().getStringExtra("content"));
         }
 
-
-        cal = getIntent().getStringExtra("cal").equals("true");
+        if(getIntent().hasExtra("cal")) {
+            cal = getIntent().getStringExtra("cal").equals("true");
+        }
 
 
         if (savedInstanceState == null) {
@@ -282,6 +287,7 @@ public class ListingActivity extends FragmentActivity implements
             });
         }
 
+        handleIntent(getIntent());
     }
 
     // Invoke displayInterstitial() when you are ready to display an interstitial.
@@ -296,6 +302,18 @@ public class ListingActivity extends FragmentActivity implements
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.list, menu);
         mMenu = menu;
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+        int linlayId = getResources().getIdentifier("android:id/search_plate", null, null);
+        ViewGroup v = (ViewGroup) searchView.findViewById(linlayId);
+        v.setBackgroundResource(R.drawable.searchviewwhite);
+
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
 
         if (arr.size() == 0) {
             MenuItem i = (MenuItem) menu.findItem(R.id.select_all);
@@ -400,14 +418,40 @@ public class ListingActivity extends FragmentActivity implements
                     transaction.commit();
                     MenuItem add = (MenuItem) mMenu.findItem(R.id.select_all);
                     add.setVisible(true);
-                    add = (MenuItem) mMenu.findItem(R.id.list_insert);
-                    add.setVisible(true);
                     item.setTitle(getResources().getString(R.string.calendar));
                     item.setIcon(R.drawable.cal);
                 }
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH == intent.getAction() || Intent.ACTION_ANSWER == intent.getAction()) {
+
+            String query;
+            if (Intent.ACTION_ANSWER == intent.getAction()) {
+                query = intent.getDataString();
+            } else {
+                query = intent.getStringExtra(SearchManager.QUERY);
+            }
+
+            if (query.contains(" ")) {
+                query.replace(' ', '%');
+            }
+
+            Intent searchIntent = new Intent(this, SearchActivity.class);
+            searchIntent.putExtra(SearchManager.QUERY, query);
+            startActivity(searchIntent);
+
+            finish();
+        }
     }
 
     /**
@@ -444,9 +488,9 @@ public class ListingActivity extends FragmentActivity implements
     }
 
     public void insertItems(ListView lv) {
-        for (int i = 1; i <= lv.getCount(); i++) {
-            if (checked.contains(i)) {
+        for (int i = 1; i < lv.getCount(); i++) {
 
+            if (checked.contains(i)) {
 
                 int id = 0;
 
@@ -468,20 +512,19 @@ public class ListingActivity extends FragmentActivity implements
 
                 c.close();
 
-                if (dates.get(i).getStartDate().length() == 0) {
+                if (dates.get(i-1).getStartDate().length() == 0) {
                     database.close();
                     continue;
                 }
 
-
-                int size = dates.get(i).getStartDate().length();
+                int size = dates.get(i-1).getStartDate().length();
 
                 Calendar beginTime = Calendar.getInstance();
-                beginTime.set(Integer.parseInt(dates.get(i).getStartDate().substring(size - 4, size)), Integer.parseInt(dates.get(i).getStartDate().substring(size - 7, size - 5)) - 1, Integer.parseInt(dates.get(i).getStartDate().substring(size - 10, size - 8)));
+                beginTime.set(Integer.parseInt(dates.get(i-1).getStartDate().substring(size - 4, size)), Integer.parseInt(dates.get(i-1).getStartDate().substring(size - 7, size - 5)) - 1, Integer.parseInt(dates.get(i-1).getStartDate().substring(size - 10, size - 8)));
 
-                size = dates.get(i).getEndDate().length();
+                size = dates.get(i-1).getEndDate().length();
                 Calendar endTime = Calendar.getInstance();
-                endTime.set(Integer.parseInt(dates.get(i).getEndDate().substring(size - 4, size)), Integer.parseInt(dates.get(i).getEndDate().substring(size - 7, size - 5)) - 1, Integer.parseInt(dates.get(i).getEndDate().substring(size - 10, size - 8)));
+                endTime.set(Integer.parseInt(dates.get(i-1).getEndDate().substring(size - 4, size)), Integer.parseInt(dates.get(i-1).getEndDate().substring(size - 7, size - 5)) - 1, Integer.parseInt(dates.get(i-1).getEndDate().substring(size - 10, size - 8)));
 
                 ContentValues values = new ContentValues();
 
@@ -495,9 +538,9 @@ public class ListingActivity extends FragmentActivity implements
                     values.put(Events.DTEND, endTime.getTimeInMillis());
                 }
 
-                values.put(Events.TITLE, dates.get(i).getDescription());
+                values.put(Events.TITLE, dates.get(i-1).getDescription());
                 values.put(Events.CALENDAR_ID, id);
-                values.put(Events.EVENT_LOCATION, dates.get(i).getLocation());
+                values.put(Events.EVENT_LOCATION, dates.get(i-1).getLocation());
                 values.put(Events.EVENT_COLOR, Color.parseColor("#0b63f0"));
                 values.put(Events.EVENT_TIMEZONE, TimeZone.getDefault().toString());
                 Uri uri = ApplicationContextProvider.getContext().getContentResolver().insert(Events.CONTENT_URI, values);
@@ -656,7 +699,6 @@ public class ListingActivity extends FragmentActivity implements
                 if (arr.indexOf(s) == arr.size() - 1) {
                     page = arr.size() - 1;
                 }
-                continue;
             } else {
                 page = arr.indexOf(s);
                 break;

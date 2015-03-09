@@ -16,7 +16,7 @@ import java.io.OutputStream;
 
 public class DBHelper extends SQLiteOpenHelper{
 	
-	public static final int DB_VERSION = 5;
+	public static final int DB_VERSION = 13;
 	public static final String DB_NAME = "calendar.db";
     private static String DB_PATH = "/data/data/"+ApplicationContextProvider.getContext().getPackageName()+"/databases/";
 	public SQLiteDatabase db;
@@ -31,7 +31,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	}
 	
 	public Cursor select(String query) throws SQLException{
-		return db.rawQuery(query, null);
+        return db.rawQuery(query, null);
 	}
 
 	public void insert(String table, ContentValues values) throws SQLException{

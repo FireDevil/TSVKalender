@@ -86,6 +86,7 @@ public class Main extends FragmentActivity implements
 
     }
 
+
     public void setLists() {
 
         ArrayList<Dates> dates = new ArrayList<Dates>();
@@ -135,9 +136,13 @@ public class Main extends FragmentActivity implements
         cursor.close();
 
         ApplicationContextProvider.setDates(dates);
+        ApplicationContextProvider.setSteadyDates(dates);
         ApplicationContextProvider.setContacts(contacts);
+        ApplicationContextProvider.setSteadyContacts(contacts);
         ApplicationContextProvider.setClubs(clubs);
+        ApplicationContextProvider.setSteadyClubs(clubs);
         ApplicationContextProvider.setAdresses(adresses);
+        ApplicationContextProvider.setSteadyAdresses(adresses);
 
         cursor.close();
         database.close();

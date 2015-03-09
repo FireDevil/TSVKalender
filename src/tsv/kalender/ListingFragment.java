@@ -164,7 +164,6 @@ public class ListingFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
 
 	}
 
@@ -352,7 +351,6 @@ public class ListingFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
-        menuInflater.inflate(R.menu.order, menu);
 
         super.onCreateOptionsMenu(menu,menuInflater);
     }

@@ -19,7 +19,7 @@
     </style>
 
     <style name="MyActionBarSpinnerStyle">
-        <item name="android:background">@drawable/spinner_light</item>
+        <item name="android:background">@drawable/spinner_light_down</item>
     </style>
 
     <style name="ExtendedActionBarTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">

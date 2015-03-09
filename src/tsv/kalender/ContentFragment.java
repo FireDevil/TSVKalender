@@ -124,18 +124,26 @@ public class ContentFragment extends Fragment {
             id = Integer.parseInt(getArguments().getString("id"));
         }
 
-        if (getArguments().getString("cal").equals("true")) {
-            cal = true;
-        } else {
-            cal = false;
-        }
+        cal = getArguments().getString("cal").equals("true");
 
         dates = mCallbacks.getDates();
         contacts = ApplicationContextProvider.getContacts();
         clubs = mCallbacks.getClubs();
         adresses = ApplicationContextProvider.getAdresses();
 
+//        if(dates.size() == 0 || clubs.size()==0){
+//            dates = ApplicationContextProvider.getDates();
+//            clubs = ApplicationContextProvider.getClubs();
+//        }
+
+        ContentDetailActivity.setArrays(dates,clubs,contacts);
+
         if (getArguments().containsKey("club")) {
+
+            if(getArguments().containsKey("steady")){
+                clubs = ApplicationContextProvider.getSteadyClubs();
+                dates = ApplicationContextProvider.getSteadyDates();
+            }
 
             setImage(rootView, clubs.get(getArguments().getInt("club")).getSportId());
             top = clubs.get(getArguments().getInt("club")).getName();
@@ -252,6 +260,11 @@ public class ContentFragment extends Fragment {
         if (cal) {
 
             clubs = ApplicationContextProvider.getClubs();
+
+            if(getArguments().containsKey("steady")){
+                clubs = ApplicationContextProvider.getSteadyClubs();
+                dates = ApplicationContextProvider.getSteadyDates();
+            }
 
             int clubId = dates.get(id).getClubId();
             int contactId = clubs.get(clubId).getContactId();
@@ -439,12 +452,9 @@ public class ContentFragment extends Fragment {
                 iv.setImageResource(R.drawable.bia_black);
                 break;
             case 4:
-                iv.setImageResource(R.drawable.sprung_black);
-                break;
-            case 5:
                 iv.setImageResource(R.drawable.alpin_black);
                 break;
-            case 6:
+            case 5:
                 iv.setImageResource(R.drawable.ic_action_person);
                 break;
         }

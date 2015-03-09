@@ -75,6 +75,10 @@ ContentFragment.Callbacks{
 			if(getIntent().hasExtra("con")){
 				args.putString("con","true");
 			}
+
+            if(getIntent().hasExtra("steady")){
+                args.putString("steady","");
+            }
 			
 			args.putString("id", ""+id);
 			args.putString("cal", ""+cal);

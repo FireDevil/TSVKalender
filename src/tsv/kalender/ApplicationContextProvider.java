@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -20,6 +19,10 @@ public class ApplicationContextProvider extends Application {
 	private static ArrayList<Contact> contacts = new ArrayList<Contact>();
 	private static ArrayList<Club> clubs = new ArrayList<Club>();
 	private static ArrayList<Adress> adresses = new ArrayList<Adress>();
+    private static ArrayList<Dates> steadyDates = new ArrayList<Dates>();
+    private static ArrayList<Contact> steadyContacts = new ArrayList<Contact>();
+    private static ArrayList<Club> steadyClubs = new ArrayList<Club>();
+    private static ArrayList<Adress> steadyAdresses = new ArrayList<Adress>();
 
     private static int interstitial;
     private static int bottom;
@@ -110,8 +113,6 @@ public class ApplicationContextProvider extends Application {
 
         dbHelper.close();
 
-        Log.e(""+interstitial,""+interstitial%5);
-
         return interstitial%5 == 0;
     }
 
@@ -121,5 +122,37 @@ public class ApplicationContextProvider extends Application {
 
     public static void setBottom(int bot) {
         bottom = bot;
+    }
+
+    public static ArrayList<Dates> getSteadyDates() {
+        return steadyDates;
+    }
+
+    public static ArrayList<Contact> getSteadyContacts() {
+        return steadyContacts;
+    }
+
+    public static ArrayList<Club> getSteadyClubs() {
+        return steadyClubs;
+    }
+
+    public static ArrayList<Adress> getSteadyAdresses() {
+        return steadyAdresses;
+    }
+
+    public static void setSteadyDates(ArrayList<Dates> dates) {
+        ApplicationContextProvider.steadyDates = dates;
+    }
+
+    public static void setSteadyContacts(ArrayList<Contact> contacts) {
+        ApplicationContextProvider.steadyContacts = contacts;
+    }
+
+    public static void setSteadyClubs(ArrayList<Club> clubs) {
+        ApplicationContextProvider.steadyClubs = clubs;
+    }
+
+    public static void setSteadyAdresses(ArrayList<Adress> adresses) {
+        ApplicationContextProvider.steadyAdresses = adresses;
     }
 }

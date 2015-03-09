@@ -22,7 +22,7 @@
 
 
     <style name="MyActionBarSpinnerStyle">
-        <item name="android:background">@drawable/spinner_light</item>
+        <item name="android:background">@drawable/spinner_light_down</item>
     </style>
 
 </resources>

@@ -1,0 +1,6 @@
+C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\classes\release
+C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\release\support-annotations-21.0.3-7032412b36f8d0f5d20b4d70f658807a9c703ef4.jar
+C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\release\classes-b76e67b658446e68cdcc6aedda50b3ddf2a9a778.jar
+C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\release\internal_impl-21.0.3-7534e3a37c8f94d2731ab3a944f913802cb881d8.jar
+C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\release\classes-192beb402dd892c403abbfc0392b49be881967e9.jar
+C:\Users\Antec\SkyDrive\Android\TSVKalender\build\intermediates\pre-dexed\release\classes-23e8deaf48aaf8f5ad1b538c72745d6681c09337.jar

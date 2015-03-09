@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+
+    <item
+        android:id="@+id/list_insert"
+        android:icon="@drawable/insert"
+        android:showAsAction="always|withText"
+        android:visible="false"/>
+    <item
+        android:id="@+id/select_all"
+        android:icon="@drawable/select"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/select"/>
+    
+   <item 
+       android:id="@+id/calendarSign"
+       android:icon="@drawable/cal"
+       android:showAsAction="ifRoom|withText"
+       android:title="@string/calendar"/>
+
+    <item android:id="@+id/search"
+        android:title="@string/overview"
+        android:icon="@drawable/ic_search_white"
+        android:showAsAction="collapseActionView|ifRoom"
+        android:actionViewClass="android.widget.SearchView" />
+
+</menu><!-- From: file:/C:/Users/Antec/SkyDrive/Android/TSVKalender/res/menu/list.xml -->

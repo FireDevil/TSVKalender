@@ -94,7 +94,7 @@ ContentFragment.Callbacks{
 		}
 
 		if(content > 0){
-			where = " WHERE sportId="+content;
+			where = " WHERE sportId='"+content+"'";
 		}
 
 		database = new DBHelper();
@@ -115,7 +115,6 @@ ContentFragment.Callbacks{
                     Club c = new Club(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(5), cursor.getInt(4), cursor.getString(3), cursor.getInt(6));
                     clubs.add(c);
                 }
-                Log.e("",cursor.getString(1));
                 arr.add(cursor.getString(1));
 			}
 			id.add(cursor.getInt(0));
